@@ -51,11 +51,11 @@ def prime_iterator():
             yield number
 
 def next_prime(number):
-    next_number = number + 1
+    _check_sieve_is_init()
     while True:
-        if PRIMALITY_SIEVE[next_number]:
-            return next_number
-        next_number += 1
+        number += 1
+        if PRIMALITY_SIEVE[number]:
+            return number
 
 def prime_range(start, end):
     _check_sieve_is_init()
